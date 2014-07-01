@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A254F6E41963499A009CB175 /* CookieCutterMasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = A254F6E31963499A009CB175 /* CookieCutterMasks.swift */; };
 		A2EAD732196347DD00914EBB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EAD731196347DD00914EBB /* AppDelegate.swift */; };
 		A2EAD734196347DD00914EBB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EAD733196347DD00914EBB /* ViewController.swift */; };
 		A2EAD737196347DD00914EBB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2EAD735196347DD00914EBB /* Main.storyboard */; };
@@ -25,6 +26,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A254F6E31963499A009CB175 /* CookieCutterMasks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CookieCutterMasks.swift; sourceTree = "<group>"; };
+		A254F6E5196349AF009CB175 /* CookieCutterPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = CookieCutterPlayground.playground; sourceTree = "<group>"; };
 		A2EAD72C196347DD00914EBB /* Cookie Cutter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cookie Cutter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2EAD730196347DD00914EBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A2EAD731196347DD00914EBB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +83,8 @@
 				A2EAD735196347DD00914EBB /* Main.storyboard */,
 				A2EAD738196347DD00914EBB /* Images.xcassets */,
 				A2EAD72F196347DD00914EBB /* Supporting Files */,
+				A254F6E31963499A009CB175 /* CookieCutterMasks.swift */,
+				A254F6E5196349AF009CB175 /* CookieCutterPlayground.playground */,
 			);
 			path = "Cookie Cutter";
 			sourceTree = "<group>";
@@ -210,6 +215,7 @@
 			files = (
 				A2EAD734196347DD00914EBB /* ViewController.swift in Sources */,
 				A2EAD732196347DD00914EBB /* AppDelegate.swift in Sources */,
+				A254F6E41963499A009CB175 /* CookieCutterMasks.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,6 +405,7 @@
 				A2EAD74A196347DD00914EBB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A2EAD74B196347DD00914EBB /* Build configuration list for PBXNativeTarget "Cookie CutterTests" */ = {
 			isa = XCConfigurationList;
@@ -407,6 +414,7 @@
 				A2EAD74D196347DD00914EBB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

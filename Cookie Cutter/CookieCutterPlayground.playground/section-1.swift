@@ -5,7 +5,6 @@ var str2 = "Hello, \(str)"
 str = "Laura"
 str2 = "Hello, \(str)"
 
-
 func sayHello(namez: String) {
   println("Hello \(namez)!")
 }
@@ -51,3 +50,4 @@ if let legCount = possibleLegCount {
   }
 }
 
+sayHello("Me")

@@ -9,8 +9,11 @@
 import UIKit
 
 class ViewController: UIViewController {
-  var cookieController = UISegmentedControl()
-  
+    @IBOutlet var cookieController: UISegmentedControl
+    @IBOutlet var addPhotoButton: UIButton
+    @IBOutlet var sharePhotoButton: UIButton
+    @IBOutlet var photoImageView: UIImageView
+
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.

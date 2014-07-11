@@ -18,23 +18,57 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EHR-lJ-MjF" userLabel="Container">
-                                <rect key="frame" x="0.0" y="58" width="480" height="366"/>
+                                <rect key="frame" x="0.0" y="58" width="480" height="374"/>
                                 <subviews>
-                                    <imageView multipleTouchEnabled="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="c6q-1J-oac">
-                                        <rect key="frame" x="64" y="7" width="352" height="352"/>
+                                    <imageView multipleTouchEnabled="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="c6q-1J-oac">
+                                        <rect key="frame" x="63" y="10" width="354" height="354"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstAttribute="width" constant="500" id="3uC-1h-mUS"/>
                                             <constraint firstAttribute="width" secondItem="c6q-1J-oac" secondAttribute="height" multiplier="1:1" id="klV-vJ-9oq"/>
                                         </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="3uC-1h-mUS"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=regular">
+                                            <mask key="constraints">
+                                                <include reference="3uC-1h-mUS"/>
+                                            </mask>
+                                        </variation>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="c6q-1J-oac" firstAttribute="leading" secondItem="EHR-lJ-MjF" secondAttribute="leading" constant="10" id="0cM-u4-ZW6"/>
+                                    <constraint firstAttribute="trailing" secondItem="c6q-1J-oac" secondAttribute="trailing" constant="10" id="HTG-FX-alm"/>
                                     <constraint firstAttribute="centerY" secondItem="c6q-1J-oac" secondAttribute="centerY" id="S7H-nX-h3F"/>
-                                    <constraint firstItem="c6q-1J-oac" firstAttribute="top" secondItem="EHR-lJ-MjF" secondAttribute="top" constant="7" id="WVK-hZ-iMS"/>
+                                    <constraint firstItem="c6q-1J-oac" firstAttribute="top" secondItem="EHR-lJ-MjF" secondAttribute="top" constant="10" id="WVK-hZ-iMS"/>
                                     <constraint firstAttribute="centerX" secondItem="c6q-1J-oac" secondAttribute="centerX" id="Zkb-nR-6n0"/>
-                                    <constraint firstAttribute="bottom" secondItem="c6q-1J-oac" secondAttribute="bottom" constant="7" id="iPX-cr-cDO"/>
+                                    <constraint firstAttribute="bottom" secondItem="c6q-1J-oac" secondAttribute="bottom" constant="10" id="iPX-cr-cDO"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="0cM-u4-ZW6"/>
+                                        <exclude reference="HTG-FX-alm"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="0cM-u4-ZW6"/>
+                                        <include reference="HTG-FX-alm"/>
+                                        <exclude reference="WVK-hZ-iMS"/>
+                                        <exclude reference="iPX-cr-cDO"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <mask key="constraints">
+                                        <exclude reference="0cM-u4-ZW6"/>
+                                        <exclude reference="HTG-FX-alm"/>
+                                        <exclude reference="WVK-hZ-iMS"/>
+                                        <exclude reference="iPX-cr-cDO"/>
+                                    </mask>
+                                </variation>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qtu-9B-0ST" userLabel="Add">
                                 <rect key="frame" x="215" y="215" width="50" height="50"/>
@@ -59,7 +93,10 @@
                                 </connections>
                             </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ZnP-CM-eYN">
-                                <rect key="frame" x="125" y="432" width="231" height="29"/>
+                                <rect key="frame" x="125" y="442" width="231" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="ciI-CZ-ucw"/>
+                                </constraints>
                                 <segments>
                                     <segment title="None"/>
                                     <segment title="Cookie"/>
@@ -71,31 +108,32 @@
                                 </connections>
                             </segmentedControl>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.25882352941176467" green="0.25882352941176467" blue="0.25882352941176467" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="EHR-lJ-MjF" firstAttribute="top" secondItem="6MB-de-iT9" secondAttribute="bottom" constant="8" symbolic="YES" id="26T-Ex-Co4"/>
+                            <constraint firstItem="EHR-lJ-MjF" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="38" id="2jd-tI-lx0"/>
                             <constraint firstAttribute="trailing" secondItem="6MB-de-iT9" secondAttribute="trailing" constant="20" id="8CY-GP-RvF"/>
-                            <constraint firstAttribute="centerY" secondItem="qtu-9B-0ST" secondAttribute="centerY" constant="0.5" id="DY5-3f-Yum"/>
-                            <constraint firstAttribute="centerX" secondItem="qtu-9B-0ST" secondAttribute="centerX" constant="-0.5" id="P0h-oi-wYD"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ZnP-CM-eYN" secondAttribute="bottom" constant="20" id="QEO-aG-OVG"/>
+                            <constraint firstAttribute="centerY" secondItem="qtu-9B-0ST" secondAttribute="centerY" id="DY5-3f-Yum"/>
+                            <constraint firstAttribute="centerX" secondItem="qtu-9B-0ST" secondAttribute="centerX" id="P0h-oi-wYD"/>
+                            <constraint firstAttribute="centerX" secondItem="ZnP-CM-eYN" secondAttribute="centerX" constant="-0.5" id="QJW-UP-2sd"/>
                             <constraint firstItem="EHR-lJ-MjF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="YDv-O4-uGd"/>
                             <constraint firstItem="6MB-de-iT9" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="20" symbolic="YES" id="aUZ-fY-COc"/>
-                            <constraint firstItem="EHR-lJ-MjF" firstAttribute="centerX" secondItem="qtu-9B-0ST" secondAttribute="centerX" id="pcu-om-GEz"/>
-                            <constraint firstAttribute="centerX" secondItem="ZnP-CM-eYN" secondAttribute="centerX" constant="-0.5" id="rci-9o-Vwn"/>
-                            <constraint firstItem="ZnP-CM-eYN" firstAttribute="top" secondItem="EHR-lJ-MjF" secondAttribute="bottom" constant="8" symbolic="YES" id="z0E-OM-djs"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ZnP-CM-eYN" secondAttribute="bottom" constant="10" id="aqG-yS-NLP"/>
+                            <constraint firstItem="ZnP-CM-eYN" firstAttribute="top" secondItem="EHR-lJ-MjF" secondAttribute="bottom" constant="10" id="eF0-qR-wRX"/>
+                            <constraint firstAttribute="trailing" secondItem="EHR-lJ-MjF" secondAttribute="trailing" id="yt0-Ol-tX6"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <connections>
-                        <outlet property="addPhotoButton" destination="qtu-9B-0ST" id="gKl-Jl-wmQ"/>
-                        <outlet property="cookieControl" destination="ZnP-CM-eYN" id="VRi-k9-cuT"/>
-                        <outlet property="photoImageView" destination="c6q-1J-oac" id="qb5-F8-vMn"/>
-                        <outlet property="sharePhotoButton" destination="6MB-de-iT9" id="R3J-M5-gD9"/>
+                        <outlet property="addPhotoButton" destination="qtu-9B-0ST" id="zIM-dK-X25"/>
+                        <outlet property="cookieController" destination="ZnP-CM-eYN" id="LDc-QM-nal"/>
+                        <outlet property="photoImageView" destination="c6q-1J-oac" id="X0M-Vt-LGy"/>
+                        <outlet property="sharePhotoButton" destination="6MB-de-iT9" id="ELN-eT-JHN"/>
+                        <outlet property="view" destination="8bC-Xf-vdC" id="kPx-r3-bzO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="661" y="-90"/>
+            <point key="canvasLocation" x="618.75" y="-136.5"/>
         </scene>
     </scenes>
     <resources>

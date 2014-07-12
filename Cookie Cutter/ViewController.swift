@@ -23,14 +23,11 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     }
     
     override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator!) {
-        /*
-        - (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator
-        {
-        [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
-        [coordinator animateAlongsideTransition:nil completion:^(id<UIViewControllerTransitionCoordinatorContext> context) {
-        [self didChangeCookieMaskSegment:nil];
-        }];
-        }*/
+        super.viewWillTransitionToSize(size, withTransitionCoordinator:coordinator)
+        
+        coordinator.animateAlongsideTransition(nil, completion: { _ in
+            self.didChangeCookieMaskSegment(nil)
+            })
     }
     
     func didChangeCookieMaskSegment(sender: UISegmentedControl!) {
@@ -49,22 +46,15 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     }
     
     func addPictureButtonSelected(sender: UIButton!) {
-        /*
-        - (IBAction)addPictureButtonSelected:(id)sender {
-        if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeSavedPhotosAlbum]) {
-        [[[UIAlertView alloc] initWithTitle:@"Error"
-        message:@"Cannot access Saved Photos on device :["
-        delegate:nil
-        cancelButtonTitle:@"OK"
-        otherButtonTitles: nil] show];
+        if !UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.SavedPhotosAlbum) {
+            UIAlertView(title: "Error", message: "Cannot access Saved Photos on device :[", delegate: nil, cancelButtonTitle: "OK").show()
         } else {
-        UIImagePickerController *photoPicker = [[UIImagePickerController alloc] init];
-        photoPicker.delegate = self;
-        photoPicker.allowsEditing = YES;
-        photoPicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-        [self showViewController:photoPicker sender:self];
+            let photoPicker: UIImagePickerController = UIImagePickerController()
+            photoPicker.delegate = self
+            photoPicker.allowsEditing = true
+            photoPicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+            self.showDetailViewController(photoPicker, sender: self)
         }
-        }*/
     }
     
     func applyNoMaskToImage() {

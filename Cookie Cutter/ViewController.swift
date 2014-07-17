@@ -29,12 +29,20 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
   @IBOutlet var sharePhotoButton: UIButton
   @IBOutlet var photoImageView: UIImageView
   
+  // Lifecycle
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
     let attributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
     cookieController.setTitleTextAttributes(attributes, forState: UIControlState.Selected)
   }
+  
+  override func preferredStatusBarStyle() -> UIStatusBarStyle {
+    return UIStatusBarStyle.LightContent
+  }
+
+  // Orientation Changes
   
   override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator!) {
     super.viewWillTransitionToSize(size, withTransitionCoordinator:coordinator)
@@ -44,7 +52,9 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
       })
   }
   
-  func didChangeCookieMaskSegment(sender: UISegmentedControl!) {
+  // IBActions 
+  
+  @IBAction func didChangeCookieMaskSegment(sender: UISegmentedControl!) {
     switch cookieController.selectedSegmentIndex {
     case 0:
       applyNoMaskToImage()
@@ -59,7 +69,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     }
   }
   
-  func addPictureButtonSelected(sender: UIButton!) {
+  @IBAction func addPictureButtonSelected(sender: UIButton!) {
     if !UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.SavedPhotosAlbum) {
       UIAlertView(title: "Error", message: "Cannot access Saved Photos on device :[", delegate: nil, cancelButtonTitle: "OK").show()
     } else {
@@ -70,6 +80,15 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
       self.showDetailViewController(photoPicker, sender: self)
     }
   }
+  
+  @IBAction func shareImage(sender: UIButton!) {
+    let imageToSave = currentMaskedImage()
+    let shareText = "Check out this picture I made in Cookie Cutter!"
+    let activityViewController = UIActivityViewController(activityItems: [imageToSave, shareText], applicationActivities: nil)
+    self.showViewController(activityViewController, sender: self)
+  }
+  
+  // Private Methods - Masking
   
   func applyNoMaskToImage() {
     photoImageView.layer.mask = nil
@@ -96,6 +115,8 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     photoImageView.layer.mask = shapeLayer
   }
   
+  // Private Methods - Image Capture
+  
   func currentMaskedImage() -> UIImage {
     UIGraphicsBeginImageContext(photoImageView.bounds.size);
     photoImageView.layer.renderInContext(UIGraphicsGetCurrentContext())
@@ -104,17 +125,12 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     return image;
   }
   
+  // Delegate Callbacks
+  
   func imagePickerController(picker: UIImagePickerController!, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]!) {
     picker.dismissViewControllerAnimated(true, completion: {
       self.photoImageView.image = info[UIImagePickerControllerEditedImage] as UIImage
       self.addPhotoButton.hidden = true
       })
-  }
-  
-  func shareImage(sender: UIButton!) {
-    let imageToSave = currentMaskedImage()
-    let shareText = "Check out this picture I made in Cookie Cutter!"
-    let activityViewController = UIActivityViewController(activityItems: [imageToSave, shareText], applicationActivities: nil)
-    self.showViewController(activityViewController, sender: self)
   }
 }

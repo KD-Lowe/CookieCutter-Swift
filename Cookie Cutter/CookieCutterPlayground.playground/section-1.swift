@@ -51,3 +51,34 @@ if let legCount = possibleLegCount {
 }
 
 sayHello("Me")
+
+class Item {
+  let text: String
+  var done: Bool
+  
+  init(text: String) {
+    self.text = text
+    self.done = false
+  }
+}
+
+class HasItem {
+  var hidden: Bool
+  var item: Item {
+  get {
+    return self.item
+  }
+  set {
+    newValue
+    hidden = newValue.done
+  }
+  }
+  init() {
+    self.hidden = true
+  }
+}
+
+let a2 = HasItem()
+let item = Item(text: "now")
+a2.item = item
+println(item.text)

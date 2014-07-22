@@ -24,10 +24,10 @@ import UIKit
 import QuartzCore
 
 class ViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
-  @IBOutlet var cookieController: UISegmentedControl
-  @IBOutlet var addPhotoButton: UIButton
-  @IBOutlet var sharePhotoButton: UIButton
-  @IBOutlet var photoImageView: UIImageView
+  @IBOutlet var cookieController: UISegmentedControl!
+  @IBOutlet var addPhotoButton: UIButton!
+  @IBOutlet var sharePhotoButton: UIButton!
+  @IBOutlet var photoImageView: UIImageView!
   
   // Lifecycle
   

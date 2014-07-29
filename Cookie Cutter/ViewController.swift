@@ -29,7 +29,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
   @IBOutlet var sharePhotoButton: UIButton!
   @IBOutlet var photoImageView: UIImageView!
   
-  // Lifecycle
+  //MARK: Lifecycle
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -42,7 +42,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     return UIStatusBarStyle.LightContent
   }
 
-  // Orientation Changes
+  //MARK: Orientation Changes
   
   override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator!) {
     super.viewWillTransitionToSize(size, withTransitionCoordinator:coordinator)
@@ -52,7 +52,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
       })
   }
   
-  // IBActions 
+  //MARK: IBActions
   
   @IBAction func didChangeCookieMaskSegment(sender: UISegmentedControl!) {
     switch cookieController.selectedSegmentIndex {
@@ -88,7 +88,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     self.showViewController(activityViewController, sender: self)
   }
   
-  // Private Methods - Masking
+  //MARK: Private Methods - Masking
   
   func applyNoMaskToImage() {
     photoImageView.layer.mask = nil
@@ -125,7 +125,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     return image;
   }
   
-  // Delegate Callbacks
+  //MARK: Delegate Callbacks
   
   func imagePickerController(picker: UIImagePickerController!, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]!) {
     picker.dismissViewControllerAnimated(true, completion: {

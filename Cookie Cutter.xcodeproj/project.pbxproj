@@ -80,11 +80,11 @@
 			children = (
 				A2EAD731196347DD00914EBB /* AppDelegate.swift */,
 				A2EAD733196347DD00914EBB /* ViewController.swift */,
+				A254F6E31963499A009CB175 /* CookieCutterMasks.swift */,
+				A254F6E5196349AF009CB175 /* CookieCutterPlayground.playground */,
 				A2EAD735196347DD00914EBB /* Main.storyboard */,
 				A2EAD738196347DD00914EBB /* Images.xcassets */,
 				A2EAD72F196347DD00914EBB /* Supporting Files */,
-				A254F6E31963499A009CB175 /* CookieCutterMasks.swift */,
-				A254F6E5196349AF009CB175 /* CookieCutterPlayground.playground */,
 			);
 			path = "Cookie Cutter";
 			sourceTree = "<group>";

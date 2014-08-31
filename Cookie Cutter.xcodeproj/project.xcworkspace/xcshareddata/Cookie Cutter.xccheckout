@@ -10,29 +10,29 @@
 	<string>Cookie Cutter</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>8EAB2A59-E681-4141-B2C4-4D60CD04159C</key>
+		<key>FA77FB3BD5858258D08F9F620A1652B494530977</key>
 		<string>https://github.com/KD-Lowe/CookieCutter-Swift.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>Cookie Cutter.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>8EAB2A59-E681-4141-B2C4-4D60CD04159C</key>
+		<key>FA77FB3BD5858258D08F9F620A1652B494530977</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/KD-Lowe/CookieCutter-Swift.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>8EAB2A59-E681-4141-B2C4-4D60CD04159C</string>
+	<string>FA77FB3BD5858258D08F9F620A1652B494530977</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>8EAB2A59-E681-4141-B2C4-4D60CD04159C</string>
+			<string>FA77FB3BD5858258D08F9F620A1652B494530977</string>
 			<key>IDESourceControlWCCName</key>
 			<string>CookieCutter-Swift</string>
 		</dict>

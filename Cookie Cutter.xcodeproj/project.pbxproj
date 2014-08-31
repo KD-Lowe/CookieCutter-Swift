@@ -26,8 +26,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		10DE02CB19949D5500B810F6 /* CookieCutterPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = CookieCutterPlayground.playground; sourceTree = SOURCE_ROOT; };
 		A254F6E31963499A009CB175 /* CookieCutterMasks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CookieCutterMasks.swift; sourceTree = "<group>"; };
-		A254F6E5196349AF009CB175 /* CookieCutterPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = CookieCutterPlayground.playground; sourceTree = "<group>"; };
 		A2EAD72C196347DD00914EBB /* Cookie Cutter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cookie Cutter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2EAD730196347DD00914EBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A2EAD731196347DD00914EBB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -81,8 +81,8 @@
 				A2EAD731196347DD00914EBB /* AppDelegate.swift */,
 				A2EAD733196347DD00914EBB /* ViewController.swift */,
 				A254F6E31963499A009CB175 /* CookieCutterMasks.swift */,
-				A254F6E5196349AF009CB175 /* CookieCutterPlayground.playground */,
 				A2EAD735196347DD00914EBB /* Main.storyboard */,
+				10DE02CB19949D5500B810F6 /* CookieCutterPlayground.playground */,
 				A2EAD738196347DD00914EBB /* Images.xcassets */,
 				A2EAD72F196347DD00914EBB /* Supporting Files */,
 			);

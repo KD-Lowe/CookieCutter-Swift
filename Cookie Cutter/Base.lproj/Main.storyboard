@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6185.11" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6206.8" systemVersion="14A329f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6190.4"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7026.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
@@ -92,23 +92,24 @@
                                     <action selector="shareImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bdz-ev-GqX"/>
                                 </connections>
                             </button>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ZnP-CM-eYN">
-                                <rect key="frame" x="185" y="562" width="231" height="29"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ZnP-CM-eYN">
+                                <rect key="frame" x="167" y="560" width="266" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="28" id="ciI-CZ-ucw"/>
                                 </constraints>
                                 <segments>
                                     <segment title="None"/>
                                     <segment title="Cookie"/>
-                                    <segment title="Star"/>
+                                    <segment title="Square"/>
                                     <segment title="Heart"/>
+                                    <segment title="Star"/>
                                 </segments>
                                 <connections>
                                     <action selector="didChangeCookieMaskSegment:" destination="BYZ-38-t0r" eventType="valueChanged" id="iCM-ST-T6y"/>
                                 </connections>
                             </segmentedControl>
                         </subviews>
-                        <color key="backgroundColor" red="0.25882352941176467" green="0.25882352941176467" blue="0.25882352941176467" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="EHR-lJ-MjF" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="38" id="2jd-tI-lx0"/>
                             <constraint firstAttribute="trailing" secondItem="6MB-de-iT9" secondAttribute="trailing" constant="20" id="8CY-GP-RvF"/>
@@ -117,8 +118,8 @@
                             <constraint firstAttribute="centerX" secondItem="ZnP-CM-eYN" secondAttribute="centerX" constant="-0.5" id="QJW-UP-2sd"/>
                             <constraint firstItem="EHR-lJ-MjF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="YDv-O4-uGd"/>
                             <constraint firstItem="6MB-de-iT9" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="20" symbolic="YES" id="aUZ-fY-COc"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ZnP-CM-eYN" secondAttribute="bottom" constant="10" id="aqG-yS-NLP"/>
-                            <constraint firstItem="ZnP-CM-eYN" firstAttribute="top" secondItem="EHR-lJ-MjF" secondAttribute="bottom" constant="10" id="eF0-qR-wRX"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ZnP-CM-eYN" secondAttribute="bottom" constant="12" id="aqG-yS-NLP"/>
+                            <constraint firstItem="ZnP-CM-eYN" firstAttribute="top" secondItem="EHR-lJ-MjF" secondAttribute="bottom" constant="8" id="eF0-qR-wRX"/>
                             <constraint firstAttribute="trailing" secondItem="EHR-lJ-MjF" secondAttribute="trailing" id="yt0-Ol-tX6"/>
                         </constraints>
                     </view>
@@ -133,7 +134,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="618.75" y="-136.5"/>
+            <point key="canvasLocation" x="618" y="-137"/>
         </scene>
     </scenes>
     <resources>

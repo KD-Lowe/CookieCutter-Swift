@@ -23,7 +23,6 @@
 * THE SOFTWARE.
 */
 
-import Foundation
 import UIKit
 
 class CookieCutterMasks: NSObject {
@@ -134,5 +133,12 @@ class CookieCutterMasks: NSObject {
     
     // Return the bezierPath sized to our 'best fitting' frame for maximum circle diameter.
     return UIBezierPath(ovalInRect: frame)
+  }
+  
+  class func bezierPathForSquareShapeInRect(originalFrame: CGRect) -> UIBezierPath {
+    let frame = sizeToFitOriginalFrame(originalFrame)
+    
+    // Return the bezierPath sized to our 'best fitting' frame for maximum circle diameter.
+    return UIBezierPath(roundedRect: frame, cornerRadius: 10.0)
   }
 }

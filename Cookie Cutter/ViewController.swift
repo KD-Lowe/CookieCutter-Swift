@@ -30,30 +30,30 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
   @IBOutlet var photoImageView: UIImageView!
   
   //MARK: Lifecycle
-  
+
   override func viewDidLoad() {
     super.viewDidLoad()
     
     let attributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
     cookieController.setTitleTextAttributes(attributes, forState: UIControlState.Selected)
   }
-  
+
   override func preferredStatusBarStyle() -> UIStatusBarStyle {
     return UIStatusBarStyle.LightContent
   }
-
-  //MARK: Orientation Changes
   
+  //MARK: Orientation Changes
+
   override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator!) {
     super.viewWillTransitionToSize(size, withTransitionCoordinator:coordinator)
     
     coordinator.animateAlongsideTransition(nil, completion: { _ in
       self.didChangeCookieMaskSegment(nil)
-      })
+    })
   }
   
   //MARK: IBActions
-  
+
   @IBAction func didChangeCookieMaskSegment(sender: UISegmentedControl!) {
     switch cookieController.selectedSegmentIndex {
     case 0:
@@ -61,26 +61,28 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     case 1:
       applyCookieMaskToImage()
     case 2:
-      applyStarMaskToImage()
+      applySquareMaskToImage()
     case 3:
       applyHeartMaskToImage()
+    case 4:
+      applyStarMaskToImage()
     default:
       applyNoMaskToImage()
     }
   }
-  
+
   @IBAction func addPictureButtonSelected(sender: UIButton!) {
     if !UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.SavedPhotosAlbum) {
       UIAlertView(title: "Error", message: "Cannot access Saved Photos on device :[", delegate: nil, cancelButtonTitle: "OK").show()
     } else {
-      let photoPicker: UIImagePickerController = UIImagePickerController()
+      let photoPicker = UIImagePickerController()
       photoPicker.delegate = self
       photoPicker.allowsEditing = true
       photoPicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
       self.showDetailViewController(photoPicker, sender: self)
     }
   }
-  
+
   @IBAction func shareImage(sender: UIButton!) {
     let imageToSave = currentMaskedImage()
     let shareText = "Check out this picture I made in Cookie Cutter!"
@@ -89,13 +91,20 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
   }
   
   //MARK: Private Methods - Masking
-  
+
   func applyNoMaskToImage() {
     photoImageView.layer.mask = nil
   }
-  
+
   func applyCookieMaskToImage() {
     let bezzle = CookieCutterMasks.bezierPathForCookieShapeInRect(photoImageView.frame)
+    let shapeLayer = CAShapeLayer()
+    shapeLayer.path = bezzle.CGPath
+    photoImageView.layer.mask = shapeLayer
+  }
+  
+  func applySquareMaskToImage() {
+    let bezzle = CookieCutterMasks.bezierPathForSquareShapeInRect(photoImageView.frame)
     let shapeLayer = CAShapeLayer()
     shapeLayer.path = bezzle.CGPath
     photoImageView.layer.mask = shapeLayer
@@ -107,7 +116,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     shapeLayer.path = bezzle.CGPath
     photoImageView.layer.mask = shapeLayer
   }
-  
+
   func applyHeartMaskToImage() {
     let bezzle = CookieCutterMasks.bezierPathForHeartShapeInRect(photoImageView.frame)
     let shapeLayer = CAShapeLayer()
@@ -115,7 +124,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     photoImageView.layer.mask = shapeLayer
   }
   
-  // Private Methods - Image Capture
+  //MARK: Private Methods - Image Capture
   
   func currentMaskedImage() -> UIImage {
     UIGraphicsBeginImageContext(photoImageView.bounds.size);
@@ -126,11 +135,11 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
   }
   
   //MARK: Delegate Callbacks
-  
+
   func imagePickerController(picker: UIImagePickerController!, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]!) {
     picker.dismissViewControllerAnimated(true, completion: {
       self.photoImageView.image = info[UIImagePickerControllerEditedImage] as UIImage
       self.addPhotoButton.hidden = true
-      })
+    })
   }
 }
